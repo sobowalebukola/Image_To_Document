@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Tesseract from "tesseract.js";
-import Speech from 'react-speech';
-
-
 
 var styles = {
   background: "#00F260", /* fallback for old browsers */
@@ -13,7 +10,19 @@ height: "60px",
 marginTop: "28px",
 borderRadius: "17px",
 fontSize: "25px"
-
+}
+var pic = {
+  marginTop: "28px",
+  alignItems : "center",
+  display: "flex",
+  justifyContent: "center"
+}
+var text = {
+  color: "#0575e6",
+  fontFamily  : "cursive"
+}
+var ren = {
+  marginRight: "4px"
 }
 class App extends Component {
   constructor(props) {
@@ -78,7 +87,7 @@ class App extends Component {
     return (
       <div className="app">
         <header className="header">
-          <h1>Converts Image to Text</h1>
+          <h1 style  = { text}>Converts Image to Text</h1>
         </header>
 
         <section className="hero">
@@ -92,9 +101,9 @@ class App extends Component {
             />
           </label>
 
-          <div>
+          <div style = {pic}>
             {this.state.uploads.map((value, index) => {
-              return <img key={index} src={value} width="100px" alt="needed"/>;
+              return <img key={index} src={value} width="100px" alt="needed" style = {ren} />;
             })}
           </div>
 
@@ -134,11 +143,6 @@ class App extends Component {
             );
           })}
         </section>
-        <Speech text="Welcome to react speech" />
-
- <div id = "sound">
- <audio  controls autoPlay/>
- </div>
       </div>
     );
   }

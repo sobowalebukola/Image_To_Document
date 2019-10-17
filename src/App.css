@@ -52,12 +52,16 @@
 
 .fileUploaderContainer {
   overflow: hidden;
-  display: block;
+  display: flex;
   position: relative;
-  color: #777777;
+  color: teal;
+  align-items: center;
+  font-size: 24px;
+  justify-content: center;
+  height  : 50px;
   padding: 8px;
   margin-bottom: 8px;
-  border: 3px dashed #777777;
+  border: 3px dashed teal;
   border-radius: 8px;
 }
 
