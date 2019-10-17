@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import "./App.css";
 import Tesseract from "tesseract.js";
+import Speech from 'react-speech';
+
+
 
 var styles = {
   background: "#00F260", /* fallback for old browsers */
 background: "-webkit-linear-gradient(to right, #0575E6, #00F260)",  /* Chrome 10-25, Safari 5.1-6 */
 background: "linear-gradient(to right, #0575E6, #00F260)" ,/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 height: "60px",
-marginTop: "40px",
+marginTop: "28px",
 borderRadius: "17px",
 fontSize: "25px"
 
@@ -131,6 +134,11 @@ class App extends Component {
             );
           })}
         </section>
+        <Speech text="Welcome to react speech" />
+
+ <div id = "sound">
+ <audio  controls autoPlay/>
+ </div>
       </div>
     );
   }
