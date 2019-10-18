@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import Tesseract from "tesseract.js";
+import Doc from "./Document";
+import { Link } from "react-router-dom";
 
 var styles = {
   background: "#00F260", /* fallback for old browsers */
@@ -107,9 +109,10 @@ class App extends Component {
             })}
           </div>
 
-          <button onClick={this.generateText} className="button" style ={styles} >
+          <Link to = "/Doc" ><button onClick={this.generateText} className="button" style ={styles} >
             Generate
           </button>
+          </Link>
         </section>
 
         {/* Results */}
@@ -126,16 +129,10 @@ class App extends Component {
                 </div>
                 <div className="results__result__info">
                   <div className="results__result__info__codes">
-                    <small>
-                      <strong>Confidence Score:</strong> {value.confidence}
-                    </small>
                   </div>
-                  {/*<div className="results__result__info__codes">
-            <small><strong>Pattern Output:</strong> {value.pattern.map((pattern) => { return pattern + ', ' })}</small>
-    </div> */}
                   <div className="results__result__info__text">
                     <small>
-                      <strong>Full Output:</strong> {value.text}
+                      <strong>Recognised Text:</strong> {value.text}
                     </small>
                   </div>
                 </div>
@@ -143,6 +140,7 @@ class App extends Component {
             );
           })}
         </section>
+        <Doc need = {this.state.documents}/>
       </div>
     );
   }

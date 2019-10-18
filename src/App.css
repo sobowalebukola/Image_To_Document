@@ -25,6 +25,8 @@
   grid-column-start: 1;
   grid-column-end: 5;
   padding: 16px;
+  align-items: space-between;
+
 }
 
 .results .results__result {
