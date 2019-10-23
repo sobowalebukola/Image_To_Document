@@ -28,6 +28,13 @@ var ren = {
 var result  = {
   marginLeft  : "15px"
 }
+var talk = {
+  background: "#00F260", /* fallback for old browsers */
+background: "-webkit-linear-gradient(to right, #0575E6, #00F260)",  /* Chrome 10-25, Safari 5.1-6 */
+background: "linear-gradient(to right, #0575E6, #00F260)" ,/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: "30px"
+
+}
 class App extends Component {
   constructor(props) {
     super(props);
@@ -132,7 +139,7 @@ class App extends Component {
                     <small>
                       <strong>Image Text:</strong> {value.text}
                     </small>
-                    <button onClick = {this.generateSpeech} style = {styles}> 🤓<Speech text = {value.text} />
+                    <button onClick = {this.generateSpeech} style = {talk}> 🤓<Speech text = {value.text} />
 </button>
                 </div>
               </div>
