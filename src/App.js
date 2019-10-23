@@ -124,7 +124,7 @@ class App extends Component {
                 <div className="results__result__image">
                   <img
                     src={this.state.uploads[index]}
-                    width= "180px"
+                    width= "150px"
                     alt="doc"
                   />
                 </div>
