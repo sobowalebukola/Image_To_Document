@@ -10,15 +10,23 @@ var yes = {
 
 }
 export default class Doc extends Component{
-    state = {
+    constructor(props){
+    super(props);
+    this.state = {
         text: ""
     }
+}
+componentDidMount(){
+    const { need } = this.props
+    this.setState({text: need})
+    console.log(this.state.text)
+}
+
+
     render(){
-        const { need } = this.props
-        this.setState({text: need})
     return(
         <div style = {yes}> 
-            {this.state.extt}
+            {this.state.text}
         </div>
     )
 }

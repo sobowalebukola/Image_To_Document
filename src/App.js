@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Tesseract from "tesseract.js";
-import Doc from "./Document";
 import { Link } from "react-router-dom";
 
 var styles = {
@@ -25,6 +24,9 @@ var text = {
 }
 var ren = {
   marginRight: "4px"
+}
+var result  = {
+  marginLeft  : "15px"
 }
 class App extends Component {
   constructor(props) {
@@ -109,10 +111,9 @@ class App extends Component {
             })}
           </div>
 
-          <Link to = "/Doc" ><button onClick={this.generateText} className="button" style ={styles} >
+          <button onClick={this.generateText} className="button" style ={styles} >
             Generate
           </button>
-          </Link>
         </section>
 
         {/* Results */}
@@ -123,24 +124,19 @@ class App extends Component {
                 <div className="results__result__image">
                   <img
                     src={this.state.uploads[index]}
-                    width="250px"
-                    alt="upload"
+                    width= "180px"
+                    alt="doc"
                   />
                 </div>
-                <div className="results__result__info">
-                  <div className="results__result__info__codes">
-                  </div>
-                  <div className="results__result__info__text">
+                  <div style = { result }>
                     <small>
-                      <strong>Recognised Text:</strong> {value.text}
+                      <strong>Image Text:</strong> {value.text}
                     </small>
-                  </div>
                 </div>
               </div>
             );
           })}
         </section>
-        <Doc need = {this.state.documents}/>
       </div>
     );
   }
