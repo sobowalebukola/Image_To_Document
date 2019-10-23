@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import Tesseract from "tesseract.js";
-import { Link } from "react-router-dom";
 import Speech from "react-speech";
+import spinner from './spinner';
 var styles = {
   background: "#00F260", /* fallback for old browsers */
 background: "-webkit-linear-gradient(to right, #0575E6, #00F260)",  /* Chrome 10-25, Safari 5.1-6 */
@@ -140,7 +140,7 @@ class App extends Component {
                     <small>
                       <strong>Image Text:</strong> {value.text}
                     </small>
-                    <button onClick = {this.generateSpeech} style = {talk}> 🤓<Speech text = {value.text} />
+                    <button style = {talk}> 🤓<Speech text = {value.text} />
 </button>
                 </div>
               </div>
