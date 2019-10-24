@@ -140,7 +140,9 @@ class App extends Component {
                     <small>
                       <strong>Image Text:</strong> {value.text}
                     </small>
-                    <button style = {talk}> 🤓<Speech text = {value.text} />
+                    <br />
+                    <br />
+                    <button style = {talk}> Speech <Speech text = {value.text} />
 </button>
                 </div>
               </div>
